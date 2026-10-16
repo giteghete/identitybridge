@@ -1,10 +1,18 @@
+
 import requests
 
-DOMAIN = "dev-obxdm8meqyvei8we.us.auth0.com" 
-LIVE_TOKEN = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9IVTJYblJKbm9HbjFRYk5KYm5NQyJ9.eyJpc3MiOiJodHRwczovL2Rldi1vYnhkbThtZXF5dmVpOHdlLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiIwQ3ZQVk9zVER3alVsMGdIUkZ3OUNBWGpjZVVBZUl1eEBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9kZXYtb2J4ZG04bWVxeXZlaTh3ZS51cy5hdXRoMC5jb20vYXBpL3YyLyIsImlhdCI6MTc5MjEyNDIxNiwiZXhwIjoxNzkyMjEwNjE2LCJzY29wZSI6InJlYWQ6dXNlcnMgdXBkYXRlOnVzZXJzIGRlbGV0ZTp1c2VycyBjcmVhdGU6dXNlcnMiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMiLCJhenAiOiIwQ3ZQVk9zVER3alVsMGdIUkZ3OUNBWGpjZVVBZUl1eCJ9.G8s3Ec--KP58agBU5j-zNzd3NQGWpsB38zsiMMOvnaAaTKcH8fOhB15kjsY70NTKdmnQ3bOM1C9kYDfZ6YOYi_6iLD9Giu2RghXqbiLT-ftxX2K4obKM33tcVklx3xJgAFH7EClLloQFAkuH7F_izcyQMP2j6yXGABGS9yj1xcUHhlGN8DpG3JTDvbOCPlMBDyu5XXAc_cqFssmUuZGE5uY-b_rXS3_tgBK8_CzXLNgUz30kmT_n_GzdqbhhHnsX8N0P9dxKoQz4g_jV7Thdrr1y2uvDdJx5SJx9GsR40bTSR9OKrbA4zeuA25Stz-C4dneqBC36UWE0orH9gvLwZw" # Keep your same token here
-TOKEN_TYPE = "Bearer"
+# Production Configuration Variables
+DOMAIN = "://auth0.com" 
 
-print("🎬 INITIALIZING IDENTITY PROVISIONING ENGINE...")
+# NOTE: In production, these should be loaded securely from environment variables (.env)
+# hardcoding values here is strictly for local sandbox validation loops.
+LIVE_TOKEN = "PLACEHOLDER_REPLACE_WITH_YOUR_VERIFIED_MANAGEMENT_TOKEN"
+CLIENT_ID = "PLACEHOLDER_REPLACE_WITH_YOUR_CLIENT_ID"
+CLIENT_SECRET = "PLACEHOLDER_REPLACE_WITH_YOUR_CLIENT_SECRET"
+
+# We target Jane Doe by encoding her unique account string into the API path
+# In Auth0, standard database users are prefixed with 'auth0|'
+TARGET_USER_ID = "auth0|jane_doe_iga_example_com" 
 
 try:
     # 1. Point to our identity creation directory
